@@ -6,7 +6,7 @@ from app.forms import LoginForm
 
 @app.route('/index')
 def index():
-    user = {'username': 'Yura'}
+    user = {'username': 'Student'}
     posts = [
         {
             'author': {'username': 'Johnny'},
