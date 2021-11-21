@@ -18,7 +18,7 @@ def start(message):
 @bot.message_handler(commands = ['help'])
 def start_message(message):
     bot.send_message(message.chat.id, 'I can:\n/mtuci -show you fresh information about MTUCI\n/joke -tell you a joke\n/weather -show you the current weather in Moscow\n')
-    
+    bot.send_message(message.chat.id, 'I also can communicate with you. Try typing:\n-Hello\n-Goodbye\n-Mtuci')
 
 @bot.message_handler(commands = ['mtuci'])
 def info(message):
@@ -36,7 +36,7 @@ def weather(message):
 
 @bot.message_handler(content_types = ['text'])
 def answer(message):
-    if message.text.lower() == "want":
+    if message.text.lower() == "mtuci":
         bot.send_message(message.chat.id, 'Here you go - https://mtuci.ru/')
     elif message.text.lower() == "hello":
         bot.send_message(message.chat.id, 'Hi!')
