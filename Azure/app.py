@@ -11,7 +11,9 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    if request.method == 'POST':
+    if request.method == 'GET':
+        return render_template('index.html')
+    elif request.method == 'POST':
         original_text = request.form['text']
         target_language = request.form['language']
 
@@ -47,5 +49,3 @@ def index():
             original_text=original_text,
             target_language=target_language
         )
-    elif request.method == 'GET':
-        return render_template('index.html')
