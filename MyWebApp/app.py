@@ -25,8 +25,8 @@ def login():
             
         elif request.form.get('registration'):
             return redirect('/registration/')
-    
-    return render_template('login.html')
+    elif:
+        return render_template('login.html')
 
 
 @app.route('/registration/', methods=['POST', 'GET'])
@@ -45,4 +45,5 @@ def registration():
                 return redirect('/login/')
         
         conn.commit()
-    return render_template('registration.html')
+    elif:
+        return render_template('registration.html')
