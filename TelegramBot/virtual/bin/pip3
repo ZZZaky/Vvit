@@ -1,4 +1,4 @@
-#!/home/zaky/GIT/Vvit/Telegram_Bot/virtual/bin/python3
+#!/home/zaky/GIT/Vvit/TelegramBot/virtual/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

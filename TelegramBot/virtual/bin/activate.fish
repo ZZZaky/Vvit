@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/zaky/GIT/Vvit/Telegram_Bot/virtual"
+set -gx VIRTUAL_ENV "/home/zaky/GIT/Vvit/TelegramBot/virtual"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

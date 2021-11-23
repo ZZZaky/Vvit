@@ -1,19 +1,25 @@
-list = []
-for i in range(50):
-    list.append(i+1)
+arr = input('Type numbers: ')
+arr = list(arr.split(','))
+arr = [int(x) for x in arr]
+arr.sort(reverse = True)
 
-list.sort(reverse=True)
-first = list[0]
-second = list[1]
+maxim = {'1': 0, '2': 0, '3': 0}
+
 s = 0
 p = 0
-s_max = 0
-maxim = []
-for i in range(2, len(list)):
-    if second + list[i] > first and first + second > list[i] and first + list[i] > second:
-        p = (first + second + list[i]) / 2
-        s = (p*(p-first)*(p-second)*(p-list[i])) ** 0.5
-        maxim = [first, second, list[i]]
+
+for i in range(2, len(arr)):
+    if arr[i - 1] + arr[i] > arr[i - 2] and arr[i - 2] + arr[i - 1] > arr[i] and arr[i - 2] + arr[i] > arr[i - 1]:
+        p = (arr[i - 2] + arr[i - 1] + arr[i]) / 2
+        s = (p * (p - arr[i - 2]) * (p - arr[i - 1]) * (p - arr[i])) ** 0.5
+        
+        maxim['1'] = arr[i - 2]
+        maxim['2'] = arr[i - 1]
+        maxim['3'] = arr[i]
         break
 
-print(s, "  ", maxim)
+if s > 0:
+    print("Maximum area: ", s)
+    print("Sides: ", maxim)
+else:
+    print("No way to create a triangle")

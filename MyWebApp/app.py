@@ -22,10 +22,11 @@ def login():
             
             if username and password and records:
                 return render_template('account.html', full_name = records[0][1], login = records[0][2], password = records[0][3])
-            
+            else:
+                return redirect('/login/')
         elif request.form.get('registration'):
             return redirect('/registration/')
-    elif:
+    else:
         return render_template('login.html')
 
 
@@ -45,5 +46,5 @@ def registration():
                 return redirect('/login/')
         
         conn.commit()
-    elif:
+    else:
         return render_template('registration.html')

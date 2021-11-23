@@ -23,7 +23,7 @@ def index():
     ]
     return render_template('index.html', title = 'Welcome to HELL', user = user, posts = posts)
 
-@app.route('/login', methods = ['GET', 'POST'])
+@app.route('/login/', methods = ['GET', 'POST'])
 def login():
     form = LoginForm()
     
