@@ -2,7 +2,6 @@ from flask import Flask, render_template, request
 import requests
 import os
 import uuid
-import json
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -34,10 +33,10 @@ def index():
             'X-ClientTraceId': str(uuid.uuid4())
         }
 
-        body = [{'text': original_text}]
+        body = [{ 'text': original_text }]
 
         translator_request = requests.post(
-            constructed_url, headers=headers, json=body)
+            constructed_url, headers=headers, json = body)
 
         translator_response = translator_request.json()
 
