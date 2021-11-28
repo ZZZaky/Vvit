@@ -36,7 +36,7 @@ def index():
         body = [{ 'text': original_text }]
 
         translator_request = requests.post(
-            constructed_url, headers=headers, json = body)
+            constructed_url, headers = headers, json = body)
 
         translator_response = translator_request.json()
 
@@ -44,7 +44,7 @@ def index():
 
         return render_template(
             'results.html',
-            translated_text=translated_text,
-            original_text=original_text,
-            target_language=target_language
+            translated_text = translated_text,
+            original_text = original_text,
+            target_language = target_language
         )
